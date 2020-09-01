@@ -3,7 +3,7 @@
 angular.module('ConstantDirective', []).directive('ngConstant', ['$ConstantInjector', function ($ConstantInjector) {
   return {
     restrict: 'A',
-    transclude: true,
+    transclude: false,
     link: function (scope, element, attrs) {
       $ConstantInjector.constant(attrs.ngConstant, JSON.parse(element.html()));
       element.remove();
